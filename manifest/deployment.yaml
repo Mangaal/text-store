@@ -7,7 +7,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: store-app
-  namespcae: store-api
+  namespace: store-api
 spec:
   replicas: 1
   selector:
@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: store-app
-          image: mangaaldochub/store-api:latest
+          image: mangaaldochub/store-api:f660395c4da922b2c49b71a8b1ea810f7b0ff5ab
           imagePullPolicy: Always
           securityContext:
             runAsUser: 0  # Run as root user
@@ -31,7 +31,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: store-app-service
-   namespcae: store-api
+  namespace: store-api
 spec:
   selector:
     app: store-app
