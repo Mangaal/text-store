@@ -23,5 +23,10 @@ response
 {"items":[{"Word":"name:","Frequency":2},{"Word":"-","Frequency":2}],"totalWordCount":23}
 
 
+k8s
+
+ kubectl port-forward -n store-api  service/store-app-service 8080:80  
+
+
 
  
