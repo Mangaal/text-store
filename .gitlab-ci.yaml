@@ -9,6 +9,10 @@ test_stage:
     stage: test
     image: golang:latest
     script:
+        - go test -v ./pkg/test_apis/add_test.go
+        - go test -v ./pkg/test_apis/get_test.go
+        - go test -v ./pkg/test_apis/update_test.go
+        - go test -v ./pkg/test_apis/delete_test.go
         - go build
         - ls
 build_stage:
