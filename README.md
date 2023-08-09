@@ -1,17 +1,20 @@
-# Store-API
+# Store
 
-Store-API is a demonstration project written in Go that showcases a simple API for managing documents. This project provides endpoints to upload documents, remove uploaded document, list uploaded documents, and perform basic operations on these documents.
+Store is a demonstration project written in Go that showcases a simple API for managing documents. This project provides endpoints to upload documents, remove uploaded document, list uploaded documents, and perform basic operations on these documents.
 
 # Feature 
- Document Upload: Upload various types of documents for storage in the server. 
 
- Document Listing: Retrieve a list of all uploaded documents.
+ Document Upload: Upload and store  various types of documents for storage in the server.  
 
- Count World: Count the total no. of words uploaded.
+ Document Listing: Allows to list of all uploaded documents.
 
- Deleted Document: Delete uploaded document.
+ Count World: Able to count the total no. of words uploaded.
 
- Most Frequent Word: Find the most frequent word used across all uploaded documents.
+ Delete Document: Can Delete uploaded documents.
+
+ Most Frequent Word: Finds the most frequent word used across all uploaded documents.
+
+ #### All of these features can be easily utilized either through the CLI tools [store](https://github.com/Mangaal/store-cli#readme)  or by directly interacting with the exposed API.
 
 # Geting Started
 
@@ -32,7 +35,7 @@ Store-API is a demonstration project written in Go that showcases a simple API f
   3. Testing
 
         ```
-           curl http://serviceip:port/apis
+           curl http://serviceip:port/
 
 # API Endpoints       
        
