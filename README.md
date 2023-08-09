@@ -27,6 +27,7 @@ Store-API is a demonstration project written in Go that showcases a simple API f
     Ensure the values in the manifest are suitable for your environment. You might need to modify values like  port numbers, resource limits, etc
     ```
        kubectl apply -f manifest/deployment.yaml
+    ```
 
   3. Testing
 
@@ -175,6 +176,11 @@ Curl Example:
         }
 ```
 
+## Latest Docker Image release
+
+```
+ mangaaldochub/store-api:a08ebf3ab7a235c7d2d22585d3a123a178e10b92
+```
 
 
 
