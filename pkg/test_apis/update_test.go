@@ -11,10 +11,6 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-type FileBody struct {
-	Files []string `json:"files"`
-}
-
 func TestUpdateFileContent(t *testing.T) {
 	gin.SetMode(gin.TestMode)
 	router := gin.Default()
