@@ -19,6 +19,8 @@ Store-API is a demonstration project written in Go that showcases a simple API f
       ```
        git clone https://github.com/Mangaal/text-store.git
 
+       cd text-store
+
  2. Install on kubernetes.
 
     The manifest/deployment.yaml contain kubernetes kind deployment ,namespace and service.
