@@ -1,6 +1,7 @@
 package main
 
 import (
+	"net/http"
 	"textstore/pkg/apis"
 
 	"github.com/gin-gonic/gin"
@@ -9,6 +10,12 @@ import (
 func main() {
 
 	r := gin.Default()
+
+	r.GET("/", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{
+			"message": "Hi You have successfully Install STORE APi",
+		})
+	})
 
 	r.GET("apis/files", apis.GetFiles)
 

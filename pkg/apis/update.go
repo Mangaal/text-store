@@ -63,4 +63,6 @@ func UpdateFileContent(c *gin.Context) {
 		return
 	}
 
+	c.JSON(http.StatusOK, gin.H{"message": "Files Updated successfully"})
+
 }

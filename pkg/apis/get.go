@@ -60,6 +60,10 @@ func FileOption(c *gin.Context) {
 	dir, err := os.Open(uploadDirectory)
 	if err != nil {
 		fmt.Println("Error opening directory:", err)
+
+		c.JSON(
+			http.StatusBadRequest,
+			gin.H{"error": err.Error()})
 		return
 	}
 	defer dir.Close()
@@ -77,6 +81,10 @@ func FileOption(c *gin.Context) {
 			file, err := os.Open(uploadDirectory + "/" + fileInfo.Name())
 			if err != nil {
 				fmt.Println("Error opening file:", err)
+
+				c.JSON(
+					http.StatusBadRequest,
+					gin.H{"error": err.Error()})
 				continue
 			}
 			defer file.Close()
@@ -114,7 +122,7 @@ func FileOption(c *gin.Context) {
 	}
 
 	if order == "a" {
-		// Sort the slice in descending order based on frequency
+		// Sort the slice in ascending order based on frequency
 		sort.SliceStable(WordFrequencyList, func(i, j int) bool {
 			return WordFrequencyList[i].Frequency < WordFrequencyList[j].Frequency
 		})
