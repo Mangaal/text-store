@@ -1,1 +1,3 @@
 uploads/*
+
+.gitlab-ci.yaml

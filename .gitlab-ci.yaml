@@ -1,0 +1,27 @@
+stages:
+ - test
+ - build
+    
+test_stage:
+    except:
+     changes:
+       - manifest/*
+    stage: test
+    image: golang:latest
+    script:
+        - go build
+        - ls
+build_stage:
+    except:
+     changes:
+       - manifest/*
+    stage: build
+    image: docker:git
+    services:
+     - docker:dind
+    before_script:
+        - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
+
+    script:
+        - docker build -t mangaaldochub/store-api:$CI_COMMIT_SHA .
+        - docker push  mangaaldochub/store-api:$CI_COMMIT_SHA  
