@@ -41,6 +41,6 @@ func TestUpdateFileContent_Fail(t *testing.T) {
 	resp := httptest.NewRecorder()
 	router.ServeHTTP(resp, req)
 
-	assert.Equal(t, http.StatusInternalServerError, resp.Code)
+	assert.Equal(t, http.StatusBadRequest, resp.Code)
 
 }
