@@ -1,17 +1,23 @@
-# Store-API
+# Store
 
-Store-API is a demonstration project written in Go that showcases a simple API for managing documents. This project provides endpoints to upload documents, remove uploaded document, list uploaded documents, and perform basic operations on these documents.
+Store  project is a GoLang server application developed using the Gin web framework. It provides flexible API for storing, managing, and performing operations on uploaded files. 
+This project provides endpoints to upload documents, removes uploaded documents, lists uploaded documents, and perform basic operations on these documents.
+
 
 # Feature 
- Document Upload: Upload various types of documents for storage in the server. 
+```
+ Document Upload: Upload and store  various types of documents for storage in the server.  
 
- Document Listing: Retrieve a list of all uploaded documents.
+ Document Listing: Allows to list of all uploaded documents.
 
- Count World: Count the total no. of words uploaded.
+ Count World: Able to count the total no. of words uploaded.
 
- Deleted Document: Delete uploaded document.
+ Delete Document: Can Delete uploaded documents.
 
- Most Frequent Word: Find the most frequent word used across all uploaded documents.
+ Most Frequent Word: Retrieves the most frequent word used across all uploaded documents.
+```
+
+ #### All of these features can be easily utilized either through the CLI tools [store](https://github.com/Mangaal/store-cli#readme)  or by directly interacting with the exposed API.
 
 # Geting Started
 
@@ -24,7 +30,7 @@ Store-API is a demonstration project written in Go that showcases a simple API f
  2. Install on kubernetes.
 
     The manifest/deployment.yaml contain kubernetes kind deployment ,namespace and service.
-    Ensure the values in the manifest are suitable for your environment. You might need to modify values like  port numbers, resource limits, etc
+    Ensure the values in the manifest are suitable for your environment. You may need to modify values like  port numbers, resource limits, etc
     ```
        kubectl apply -f manifest/deployment.yaml
     ```
@@ -32,7 +38,7 @@ Store-API is a demonstration project written in Go that showcases a simple API f
   3. Testing
 
         ```
-           curl http://serviceip:port/apis
+           curl http://serviceip:port/
 
 # API Endpoints       
        
@@ -40,8 +46,6 @@ Store-API is a demonstration project written in Go that showcases a simple API f
 ### Update or Upload Document. 
 
 Endpoint: POST "apis/file"
-
-Request: multipart/form-data with a field named files containing the document file.
 
 Response:  200 OK on successful upload.
 
@@ -80,8 +84,6 @@ Curl Example:
  ### Delete
 
 Endpoint: DELETE "apis/file"
-
-Request: application/json  with a key named files containing the names of the document file.
 
 Response:  200 OK on successful Delete.
 
