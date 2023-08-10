@@ -181,7 +181,7 @@ Curl Example:
 ## Latest Docker Image release
 
 ```
- mangaaldochub/store-api:v1
+ mangaaldochub/store-api:v1.0
 ```
 
 
