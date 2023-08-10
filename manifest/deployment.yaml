@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: store-app
-          image: mangaaldochub/store-api:v1
+          image: mangaaldochub/store-api:v1.0
           imagePullPolicy: Always
           securityContext:
             runAsUser: 0  # Run as root user
