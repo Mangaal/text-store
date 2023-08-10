@@ -3,12 +3,11 @@ package apis
 import (
 	"bufio"
 	"fmt"
-	"io"
+	"log"
 	"net/http"
 	"os"
 	"sort"
 	"strconv"
-	"strings"
 
 	"github.com/gin-gonic/gin"
 )
@@ -89,21 +88,17 @@ func FileOption(c *gin.Context) {
 			}
 			defer file.Close()
 
-			// Read file content and update word frequency
-			reader := bufio.NewReader(file)
-			for {
-				line, err := reader.ReadString('\n')
-				if err == io.EOF {
-					break
-				} else if err != nil {
-					fmt.Println("Error reading file:", err)
-					break
-				}
-				words := strings.Fields(line)
-				for _, word := range words {
-					Count++
-					wordFrequency[word]++
-				}
+			Scanner := bufio.NewScanner(file)
+
+			Scanner.Split(bufio.ScanWords)
+
+			for Scanner.Scan() {
+
+				Count++
+				wordFrequency[Scanner.Text()]++
+			}
+			if err := Scanner.Err(); err != nil {
+				log.Fatal(err)
 			}
 
 		}
